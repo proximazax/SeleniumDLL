@@ -1,5 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 # driver.find_element_by_id("something")
 def findElementByID(driver, idAsString):

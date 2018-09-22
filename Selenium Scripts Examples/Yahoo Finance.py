@@ -1,6 +1,5 @@
-
-import DriverClass
 import FindElement
+import DriverClass
 import Inputs
 import time
 
@@ -16,11 +15,11 @@ elm_searchBar = FindElement.findElementByName(driver, 'p')
 keyboard = Inputs.Keyboard(driver)
 mouse = Inputs.Mouse(driver)
 keyboard.writeTextToElement(element=elm_searchBar, inputAsString='EBAY')
+time.sleep(2)
 elm_searchBtn = FindElement.findElementByID(driver, "search-button")
-time.sleep(1)
 mouse.clickOnAnElement(element=elm_searchBtn)
 
-time.sleep(5)
+time.sleep(10)
 driver.quit()
 
 

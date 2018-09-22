@@ -1,6 +1,5 @@
-
-import DriverClass
 import FindElement
+import DriverClass
 import Inputs
 import time
 
@@ -34,7 +33,7 @@ keyboard.pressAnyKey(keyboard.Keys.SPACE)
 
 time.sleep(5)
 # Close all...
-Driver.quit()
+driver.quit()
 
 
 
