@@ -9,8 +9,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class Keyboard:
 
-    def __init__(self,driver):
-        self.driver = driver
+    def __init__(self,Driver):
+        self.driver = Driver.driver
         self.actions = ActionChains(self.driver)
         self.Keys = Keys
 
@@ -27,8 +27,8 @@ class Keyboard:
 
 class Mouse:
 
-    def __init__(self,driver):
-        self.driver = driver
+    def __init__(self,Driver):
+        self.driver = Driver.driver
 
     def clickOnAnElement(self, element):
         element.click()

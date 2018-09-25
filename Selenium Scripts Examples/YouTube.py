@@ -9,18 +9,18 @@ Driver = DriverClass.Driver('Chrome', loadTimeInSeconds=page_load_timeOut)
 URL = "https://www.youtube.com/"
 Driver.openWebsite(url=URL)
 
-driver = Driver.getDriver()
+# driver = Driver.getDriver()
 
-keyboard = Inputs.Keyboard(driver)
-mouse = Inputs.Mouse(driver)
+keyboard = Inputs.Keyboard(Driver)
+mouse = Inputs.Mouse(Driver)
 
-elm_searchBar = FindElement.findElementByID(driver=driver, idAsString='search')
+elm_searchBar = Driver.Find.findElementByID(idAsString='search')
 line_to_search = "Jonas Blue - Rise ft. Jack & Jack"
 keyboard.writeTextToElement(element=elm_searchBar,inputAsString=line_to_search)
 keyboard.pressAnyKey(keyboard.Keys.ENTER)
 
 time.sleep(2)
-elm_videoTitle = FindElement.findElementByTitle(driver, titleAsString=line_to_search)
+elm_videoTitle = Driver.Find.findElementByTitle(titleAsString=line_to_search)
 mouse.clickOnAnElement(elm_videoTitle)
 
 time.sleep(8)
@@ -33,7 +33,7 @@ keyboard.pressAnyKey(keyboard.Keys.SPACE)
 
 time.sleep(5)
 # Close all...
-driver.quit()
+Driver.close()
 
 
 

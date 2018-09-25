@@ -9,18 +9,19 @@ Driver = DriverClass.Driver('Chrome', loadTimeInSeconds=page_load_timeOut)
 URL = "https://finance.yahoo.com/"
 Driver.openWebsite(url=URL)
 
-driver = Driver.getDriver()
+# driver = Driver.getDriver()
 
-elm_searchBar = FindElement.findElementByName(driver, 'p')
-keyboard = Inputs.Keyboard(driver)
-mouse = Inputs.Mouse(driver)
+elm_searchBar = Driver.Find.findElementByName('p')
+keyboard = Inputs.Keyboard(Driver)
+mouse = Inputs.Mouse(Driver)
 keyboard.writeTextToElement(element=elm_searchBar, inputAsString='EBAY')
-time.sleep(2)
-elm_searchBtn = FindElement.findElementByID(driver, "search-button")
+time.sleep(3)
+elm_searchBtn = Driver.Find.findElementByID("search-button")
 mouse.clickOnAnElement(element=elm_searchBtn)
 
 time.sleep(10)
-driver.quit()
+Driver.close()
+# driver.quit()
 
 
 

@@ -1,5 +1,6 @@
 
 from selenium import webdriver
+import FindElement
 import os
 CHROME = 'Chrome'
 FIRE_FOX = 'Firefox'
@@ -26,6 +27,8 @@ class Driver:
 
         self.driver = driver
         self.driver.set_page_load_timeout(loadTimeInSeconds)
+        self.Find = FindElement.Find(self.driver)
+
 
     def getDriver(self):
         return self.driver
@@ -36,5 +39,8 @@ class Driver:
     def openWebsite(self,url):
         self.driver.get(url)
 
+    def close(self):
+        self.driver.quit()
+        print('*** Driver closed successfully ***')
 
 
