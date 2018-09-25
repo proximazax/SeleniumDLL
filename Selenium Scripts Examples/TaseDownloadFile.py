@@ -12,6 +12,7 @@ keyboard = Inputs.Keyboard(Driver)
 mouse = Inputs.Mouse(Driver)
 
 time.sleep(3)
+# Find
 elm_downloadIcon = Driver.Find.findElementByAriaLabel("הורדת נתונים")
 # elm_downloadIcon = FindElement.findElementByAriaLabel(driver, "הורדת נתונים")
 mouse.clickOnAnElement(elm_downloadIcon)

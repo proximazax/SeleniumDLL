@@ -9,8 +9,6 @@ Driver = DriverClass.Driver('Chrome', loadTimeInSeconds=page_load_timeOut)
 URL = "https://www.youtube.com/"
 Driver.openWebsite(url=URL)
 
-# driver = Driver.getDriver()
-
 keyboard = Inputs.Keyboard(Driver)
 mouse = Inputs.Mouse(Driver)
 
