@@ -11,7 +11,7 @@ class Keyboard:
 
     def __init__(self,Driver):
         self.driver = Driver.driver
-        self.actions = ActionChains(self.driver)
+        self.actions = ActionChains(Driver.driver)
         self.Keys = Keys
 
     def writeTextToElement(self, element, inputAsString):

@@ -45,6 +45,7 @@ class Driver:
             chromeOptions = webdriver.ChromeOptions()
             prefs = {"download.default_directory": self.downloadPath}
             chromeOptions.add_experimental_option("prefs", prefs)
+            #chromeOptions.add_argument('headless')
 
             driver = webdriver.Chrome(executable_path=self.driversPath + "/chromedriver.exe",chrome_options=chromeOptions)
         elif driverTypeAsString == FIRE_FOX:
@@ -70,6 +71,9 @@ class Driver:
 
     def openWebsite(self,url):
         self.driver.get(url)
+
+    def refreshPage(self):
+        self.driver.refresh();
 
     def close(self):
         self.driver.quit()

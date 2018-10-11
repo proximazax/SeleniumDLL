@@ -48,4 +48,13 @@ class Find:
         element.get_attribute("href")
 
 
+    # xPath = "//*[@id='mainContent']/indices-updates/listed-capital/gridview/div/div[2]/div/div[1]/div[1]/span[1]/b"
+    def findElementByXpath(self,xPath):
+        from selenium.webdriver.common.by import By
+        element = self.driver.find_element(By.XPATH, xPath)
+        return element
 
+
+    def getTextFromElement(self,element):
+        text = element.text
+        return text
